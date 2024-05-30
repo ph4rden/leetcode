@@ -15,6 +15,16 @@ class Solution:
             prev = curr
             curr = temp
         return prev
+    
+    def recursiveReverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        def reverse(cur, prev):
+            if cur is None:
+                return prev
+            else:
+                next = cur.next
+                cur.next = prev
+                return reverse(next, cur)
+        return reverse(head, None)
 
 def create_linked_list(elements):
     head = ListNode(elements[0])
