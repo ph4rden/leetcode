@@ -3,6 +3,8 @@ from typing import List
 
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
+        # since heapq in python utilizes a min-max heap, we're going to store the negation of the values so that
+        # it can act as a max-min heap instead
         self.heap = [-stone for stone in stones]
         heapq.heapify(self.heap)
 
