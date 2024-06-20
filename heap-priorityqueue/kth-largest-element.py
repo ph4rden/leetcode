@@ -2,6 +2,8 @@ import heapq
 
 class KthLargest(object): 
     
+    # initial method is O(n) space complexity bc we're storing all elements of nums array
+    # time complexity is O(n log n) bc heapify converts in O(n) time and heappop is O(logn)
     def __init__(self, k, nums): 
         # defining value in instance of the class
         self.k = k
